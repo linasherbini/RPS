@@ -1,24 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Play View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlayViewController" customModule="RPS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ShH-z8-N4Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="C4K-yG-jHW">
+                                        <rect key="frame" x="32.5" y="0.0" width="349" height="553"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYM-x2-rn3">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="553"/>
+                                                <state key="normal" image="rock"/>
+                                                <connections>
+                                                    <action selector="playRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auj-a0-JqT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiN-Ps-fNY">
+                                                <rect key="frame" x="137" y="0.0" width="75" height="553"/>
+                                                <state key="normal" image="paper"/>
+                                                <connections>
+                                                    <action selector="playPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="98E-AD-c7i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nze-za-yJ2">
+                                                <rect key="frame" x="274" y="0.0" width="75" height="553"/>
+                                                <state key="normal" image="scissors"/>
+                                                <connections>
+                                                    <segue destination="fbl-Eh-5lz" kind="modal" identifier="result" id="FYo-oz-m2l"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEZZ PLAY :-----)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEv-ck-idZ">
+                                        <rect key="frame" x="103.5" y="553" width="207.5" height="255"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" red="0.31591792272511182" green="0.74540560233160624" blue="0.21498018869143148" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ShH-z8-N4Z" secondAttribute="trailing" id="3fN-Ls-8aH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ShH-z8-N4Z" secondAttribute="bottom" id="HxU-YT-rwL"/>
+                            <constraint firstItem="ShH-z8-N4Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mvR-Uk-FmL"/>
+                            <constraint firstItem="ShH-z8-N4Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rIM-Ey-oAW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="paperButton" destination="MiN-Ps-fNY" id="kOQ-iO-kpr"/>
+                        <outlet property="rockButton" destination="vYM-x2-rn3" id="AfG-j4-A2s"/>
+                        <outlet property="scissorsButton" destination="Nze-za-yJ2" id="wRt-cz-nsF"/>
+                        <segue destination="fbl-Eh-5lz" kind="show" id="bQA-jy-Omp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="127"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="VZm-Jh-Osf">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="fbl-Eh-5lz" customClass="ResultsViewController" customModule="RPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jUR-Ul-YIy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="u6o-hU-oQH">
+                                <rect key="frame" x="0.0" y="214" width="414" height="390"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tie" translatesAutoresizingMaskIntoConstraints="NO" id="FEq-A3-xG9">
+                                        <rect key="frame" x="115.5" y="0.0" width="183" height="270.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":-)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajB-gq-IDI">
+                                        <rect key="frame" x="198" y="285.5" width="18.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USI-Si-NRX">
+                                        <rect key="frame" x="140.5" y="328" width="133" height="62"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="21"/>
+                                        <state key="normal" title="Play Again? ;-)">
+                                            <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playAgain" destination="fbl-Eh-5lz" eventType="touchUpOutside" id="dPe-WD-WP7"/>
+                                            <segue destination="BYZ-38-t0r" kind="modal" id="LqQ-Q7-RBf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="u6o-hU-oQH" firstAttribute="leading" secondItem="8ch-nr-5Sg" secondAttribute="leading" id="H5J-LC-Q9y"/>
+                            <constraint firstItem="8ch-nr-5Sg" firstAttribute="trailing" secondItem="u6o-hU-oQH" secondAttribute="trailing" id="MJg-yy-xih"/>
+                            <constraint firstItem="u6o-hU-oQH" firstAttribute="top" secondItem="8ch-nr-5Sg" secondAttribute="top" constant="214" id="WJ1-00-6H8"/>
+                            <constraint firstItem="8ch-nr-5Sg" firstAttribute="bottom" secondItem="u6o-hU-oQH" secondAttribute="bottom" constant="204" id="tLm-2a-9ti"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8ch-nr-5Sg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FIz-37-7yh"/>
+                    <connections>
+                        <outlet property="playAgainButton" destination="USI-Si-NRX" id="XHz-Fj-L2u"/>
+                        <outlet property="resultImg" destination="FEq-A3-xG9" id="YAV-fl-mhN"/>
+                        <outlet property="resultLabel" destination="ajB-gq-IDI" id="X75-rn-Qm6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHW-MB-g8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="127"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="paper" width="75" height="65"/>
+        <image name="rock" width="75" height="65"/>
+        <image name="scissors" width="75" height="65"/>
+        <image name="tie" width="183" height="200"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bQA-jy-Omp"/>
+    </inferredMetricsTieBreakers>
 </document>
